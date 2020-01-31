@@ -5,9 +5,9 @@ class Jphp{
     public function __construct(array $argv,JphpInterface $callback){
         $reader = new StandardInputReader($argv);
 
-        $_HEADERS = json_decode(\base64_decode($reader->headers),true);
-        $_ARGS = json_decode(\base64_decode($reader->args),true);
-        $_QUERY = json_decode(\base64_decode($reader->query),true);
+        $_HEADERS = &$reader->headers;
+        $_ARGS = &$reader->args;
+        $_QUERY = &$reader->query;
         $_BODY = &$reader->body;
 
         $response = $callback->run($_HEADERS,$_ARGS,$_QUERY,$_BODY);
