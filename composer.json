@@ -9,7 +9,7 @@
             "email": "tangent.jotey@gmail.com"
         }
     ],
-    "minimum-stability":"dev",
+    "minimum-stability":"v1.1",
     "require": {},
     "autoload": {
         "psr-4": {
